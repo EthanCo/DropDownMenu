@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.heiko.dropdownmenu.MainActivity">
+
+    <com.heiko.dropwidget.DropDownButton
+        android:id="@+id/drop_down_button"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:divider_visible="true"
+        app:drop_direction="@drawable/my_select_drop_direction"
+        app:title="@string/drop_title" />
+
+    <FrameLayout
+        android:id="@+id/layout_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#88222222"
+        android:visibility="gone" />
+</LinearLayout>

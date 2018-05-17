@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DropDownMenu</string>
+    <string name="drop_title">标题</string>
+</resources>
