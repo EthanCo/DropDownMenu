@@ -132,10 +132,11 @@ public class DropDownButton extends FrameLayout {
      *
      * @param activity
      * @param dropBeans   数据列表，Bean对象需实现DropBeanFlag接口
+     * @param defCheckPos 默认选中位置
      * @param heightScale 高度占手机屏幕的比例 0-1
      * @param layoutMask  半透明阴影
      */
-    public void attach(final Activity activity, final List<DropBeanFlag> dropBeans,
+    public void attach(final Activity activity, final List<DropBeanFlag> dropBeans, final int defCheckPos,
                        @FloatRange(from = 0, to = 1) final float heightScale,
                        @Nullable final View layoutMask) {
         addDropStateChangeListener(new DropStateChangeListener() {
@@ -149,6 +150,15 @@ public class DropDownButton extends FrameLayout {
                 }
             }
         });
+        if (defCheckPos < dropBeans.size()) {
+            setCurrCheckPos(defCheckPos);
+            setTitle(dropBeans.get(defCheckPos).getDropName());
+        } else {
+            if (dropBeans.size() > 0) {
+                setCurrCheckPos(0);
+                setTitle(dropBeans.get(0).getDropName());
+            }
+        }
     }
 
     public int getCurrCheckPos() {

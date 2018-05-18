@@ -43,7 +43,6 @@ public class CustomActivity extends AppCompatActivity {
         layoutCustomShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvCustomShow.setText("关闭");
                 layoutMask.setVisibility(View.VISIBLE);
                 DropDownMenu.showCustom(CustomActivity.this, dropBeans, 0.5F, layoutCustomShow, currCheckedPos, new DropAdapter.OnItemClickListener() {
                     @Override
@@ -53,12 +52,13 @@ public class CustomActivity extends AppCompatActivity {
                 }, new DropDownMenu.OnDropDismissListener() {
                     @Override
                     public void onDismiss() {
-                        tvCustomShow.setText("打开");
+                        tvCustomShow.setText(dropBeans.get(currCheckedPos).getDropName());
                         layoutMask.setVisibility(View.GONE);
                     }
                 });
             }
         });
+        tvCustomShow.setText(dropBeans.get(currCheckedPos).getDropName());
     }
 
     @NonNull

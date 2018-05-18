@@ -32,20 +32,21 @@ public class DropDownMenu {
      * @param dropDownButton DropDownButton
      * @return
      */
-    public static PopupWindow show(Activity activity, List<DropBeanFlag> dropBeans,
+    public static PopupWindow show(Activity activity, final List<DropBeanFlag> dropBeans,
                                    @FloatRange(from = 0, to = 1) float heightScale,
                                    final DropDownButton dropDownButton) {
         dismiss();
         View root = findRootView(activity);
         final DropAdapter dropAdapter = initRecyclerView(activity,
                 dropBeans, dropDownButton.getCurrCheckPos(), root);
-        final PopupWindow popupWindow = PopupUtil.showAsDropDown(
+        final PopupWindow popupWindow = DropPopupUtil.showAsDropDown(
                 activity, root, heightScale, dropDownButton);
 
         dropAdapter.addOnItemClickListener(new DropAdapter.OnItemClickListener() {
             @Override
             public void onClick(View view, int pos) {
                 dropDownButton.setCurrCheckPos(pos);
+                dropDownButton.setTitle(dropBeans.get(pos).getDropName());
                 dropAdapter.setSingleCheck(pos);
                 popupWindow.dismiss();
             }
@@ -87,7 +88,7 @@ public class DropDownMenu {
         dismiss();
         View root = findRootView(activity);
         final DropAdapter dropAdapter = initRecyclerView(activity, dropBeans, defCheckedPos, root);
-        final PopupWindow popupWindow = PopupUtil.showAsDropDown(
+        final PopupWindow popupWindow = DropPopupUtil.showAsDropDown(
                 activity, root, heightScale, anchor);
 
         if (dropAdapterItemClick != null) {

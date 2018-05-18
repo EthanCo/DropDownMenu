@@ -10,7 +10,7 @@ import android.widget.PopupWindow;
  * @Description PopupWindow的一个封装工具类
  * Created by EthanCo on 2016/3/30.
  */
-class PopupUtil {
+public class DropPopupUtil {
     /**
      * @param activity
      * @param contentView 自定义的view
