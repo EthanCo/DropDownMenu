@@ -179,7 +179,7 @@ Add it in your root build.gradle at the end of repositories:
     public static void dismiss();
 
 
-### 不依赖DropDownButton，DropDownMenu单独使用
+### 不依赖DropDownButton，仅单独使用DropDownMenu
 详见Demo的CustomActivity
 
 	
