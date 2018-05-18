@@ -6,7 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.heiko.dropwidget.DropBeanFlag;
 import com.heiko.dropwidget.DropDownButton;
@@ -29,7 +31,16 @@ public class MainActivity extends AppCompatActivity {
         final List<DropBeanFlag> dropBeans = initDatas();
 
         //方法一
-        dropDownButton.attach(this, dropBeans,2, 0.5F, layoutMask);
+        dropDownButton.attach(this, dropBeans, 2, 0.5F, layoutMask, new DropDownButton.DropStateChangeListener() {
+            @Override
+            public void onDropStateChange(View view, boolean isOpen) {
+                if (isOpen) {
+                    Toast.makeText(MainActivity.this, "open", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "choice:" + dropDownButton.getCurrCheckPos(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         //方法二
         /*dropDownButton.addDropStateChangeListener(new DropDownButton.DropStateChangeListener() {

@@ -159,7 +159,7 @@ public class DropDownButton extends FrameLayout {
      */
     public void attach(final Activity activity, final List<DropBeanFlag> dropBeans, final int defCheckPos,
                        @FloatRange(from = 0, to = 1) final float heightScale,
-                       @Nullable final View layoutMask) {
+                       @Nullable final View layoutMask, final DropStateChangeListener dropStateChangeListener) {
         addDropStateChangeListener(new DropStateChangeListener() {
             @Override
             public void onDropStateChange(View view, boolean isOpen) {
@@ -168,6 +168,9 @@ public class DropDownButton extends FrameLayout {
                 }
                 if (layoutMask != null) {
                     layoutMask.setVisibility(isOpen ? View.VISIBLE : View.GONE);
+                }
+                if (dropStateChangeListener!=null) {
+                    dropStateChangeListener.onDropStateChange(view, isOpen);
                 }
             }
         });
