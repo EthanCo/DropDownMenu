@@ -13,6 +13,7 @@
         android:layout_height="56dp"
         app:divider_visible="true"
         app:drop_direction="@drawable/my_select_drop_direction"
+        app:divider_color="@color/color_drop_divider"
         app:title="@string/drop_title" />
 
     <FrameLayout

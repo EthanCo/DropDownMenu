@@ -86,14 +86,26 @@ public class DropDownButton extends FrameLayout {
         tvDropTitle.setText(text);
     }
 
+    /**
+     * 设置标题
+     * @param resId
+     */
     public void setTitle(@StringRes int resId) {
         tvDropTitle.setText(resId);
     }
 
+    /**
+     * 获取标题
+     * @return
+     */
     public String getTitle() {
         return tvDropTitle.getText().toString();
     }
 
+    /**
+     * 设置下拉图标
+     * @param resId 使用selector状态改变，图标会联动改变，详见select_drop_direction.xml
+     */
     public void setDropDirectionImage(@DrawableRes int resId) {
         imgDropDirection.setImageResource(resId);
     }
@@ -128,7 +140,7 @@ public class DropDownButton extends FrameLayout {
     }
 
     /**
-     * 进行相关联，从而再
+     * 进行关联，实现DropDownButton和DropDownMenu的联动
      *
      * @param activity
      * @param dropBeans   数据列表，Bean对象需实现DropBeanFlag接口
@@ -161,10 +173,18 @@ public class DropDownButton extends FrameLayout {
         }
     }
 
+    /**
+     * 获取当前选中位置
+     * @return
+     */
     public int getCurrCheckPos() {
         return currCheckPos;
     }
 
+    /**
+     * 设置当前选中位置
+     * @param currCheckPos
+     */
     public void setCurrCheckPos(int currCheckPos) {
         this.currCheckPos = currCheckPos;
     }
@@ -175,12 +195,20 @@ public class DropDownButton extends FrameLayout {
 
     private List<DropStateChangeListener> stateChangeListeners = new ArrayList<>();
 
+    /**
+     * 添加DropDownButton状态改变监听
+     * @param listener
+     */
     public void addDropStateChangeListener(DropStateChangeListener listener) {
         if (!stateChangeListeners.contains(listener)) {
             stateChangeListeners.add(listener);
         }
     }
 
+    /**
+     * 移除DropDownButton状态改变监听
+     * @param listener
+     */
     public void removeDropStateChangeListener(DropStateChangeListener listener) {
         stateChangeListeners.remove(listener);
     }

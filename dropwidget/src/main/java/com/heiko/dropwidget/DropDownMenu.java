@@ -135,6 +135,9 @@ public class DropDownMenu {
         return inflater.inflate(R.layout.layout_drop_popup, null);
     }
 
+    /**
+     * dismiss下拉菜单
+     */
     public static void dismiss() {
         if (popupWindowWeakRef == null) return;
 
