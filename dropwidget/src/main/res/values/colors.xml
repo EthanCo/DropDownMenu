@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="color_drop_divider">#BDBDBD</color>
+    <color name="color_def_drop_background">#FFFFFF</color>
 </resources>

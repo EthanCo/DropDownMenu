@@ -45,6 +45,7 @@ Add it in your root build.gradle at the end of repositories:
 	        app:divider_visible="true"
 			app:divider_color="@color/color_drop_divider"
 	        app:drop_direction="@drawable/my_select_drop_direction"
+			app:button_background="@color/color_def_drop_background"
 	        app:title="@string/drop_title" />
 	
 	    <FrameLayout
@@ -68,6 +69,7 @@ Add it in your root build.gradle at the end of repositories:
 		app:divider_color   //底部分割线颜色
 		app:drop_direction //下拉图标，使用selector，详见demo中的my_select_drop_direction.xml
  		app:title //标题  
+		app:button_background //背景色
 
 ### DropDownButton方法说明  
 

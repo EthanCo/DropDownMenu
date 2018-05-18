@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ public class DropDownButton extends FrameLayout {
     private ImageView imgDropDirection;
     private View viewDropDivider;
     private int currCheckPos; //用作记录DropDownMenu当前的选中位置
+    private ViewGroup layoutDropRoot;
 
     public DropDownButton(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -50,6 +52,7 @@ public class DropDownButton extends FrameLayout {
         tvDropTitle = root.findViewById(R.id.tv_drop_title);
         imgDropDirection = root.findViewById(R.id.img_drop_direction);
         viewDropDivider = root.findViewById(R.id.view_drop_divider);
+        layoutDropRoot = root.findViewById(R.id.layout_drop_root);
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +66,8 @@ public class DropDownButton extends FrameLayout {
         boolean dividerVisible = ta.getBoolean(R.styleable.DropDownButton_divider_visible, true);
         @ColorInt int dividerColor = ta.getColor(R.styleable.DropDownButton_divider_color,
                 getResources().getColor(R.color.color_drop_divider));
+        @ColorInt int buttonBg = ta.getColor(R.styleable.DropDownButton_button_background,
+                getResources().getColor(R.color.color_def_drop_background));
         if (TextUtils.isEmpty(dropTitle)) {
             dropTitle = "Title";
         }
@@ -80,6 +85,7 @@ public class DropDownButton extends FrameLayout {
         } else {
             viewDropDivider.setVisibility(View.GONE);
         }
+        layoutDropRoot.setBackgroundColor(buttonBg);
     }
 
     public void setTitle(CharSequence text) {
@@ -88,6 +94,7 @@ public class DropDownButton extends FrameLayout {
 
     /**
      * 设置标题
+     *
      * @param resId
      */
     public void setTitle(@StringRes int resId) {
@@ -96,6 +103,7 @@ public class DropDownButton extends FrameLayout {
 
     /**
      * 获取标题
+     *
      * @return
      */
     public String getTitle() {
@@ -104,6 +112,7 @@ public class DropDownButton extends FrameLayout {
 
     /**
      * 设置下拉图标
+     *
      * @param resId 使用selector状态改变，图标会联动改变，详见select_drop_direction.xml
      */
     public void setDropDirectionImage(@DrawableRes int resId) {
@@ -175,6 +184,7 @@ public class DropDownButton extends FrameLayout {
 
     /**
      * 获取当前选中位置
+     *
      * @return
      */
     public int getCurrCheckPos() {
@@ -183,6 +193,7 @@ public class DropDownButton extends FrameLayout {
 
     /**
      * 设置当前选中位置
+     *
      * @param currCheckPos
      */
     public void setCurrCheckPos(int currCheckPos) {
@@ -197,6 +208,7 @@ public class DropDownButton extends FrameLayout {
 
     /**
      * 添加DropDownButton状态改变监听
+     *
      * @param listener
      */
     public void addDropStateChangeListener(DropStateChangeListener listener) {
@@ -207,6 +219,7 @@ public class DropDownButton extends FrameLayout {
 
     /**
      * 移除DropDownButton状态改变监听
+     *
      * @param listener
      */
     public void removeDropStateChangeListener(DropStateChangeListener listener) {

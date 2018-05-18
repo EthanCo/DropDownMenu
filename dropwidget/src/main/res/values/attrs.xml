@@ -5,5 +5,6 @@
         <attr name="drop_direction" format="reference" />
         <attr name="divider_visible" format="boolean" />
         <attr name="divider_color" format="color" />
+        <attr name="button_background" format="color"/>
     </declare-styleable>
 </resources>

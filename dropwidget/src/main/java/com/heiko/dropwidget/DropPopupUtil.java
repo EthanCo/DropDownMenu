@@ -1,6 +1,7 @@
 package com.heiko.dropwidget;
 
 import android.app.Activity;
+import android.graphics.drawable.BitmapDrawable;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,8 @@ public class DropPopupUtil {
         final PopupWindow popupWindow = new PopupWindow(contentView,
                 ViewGroup.LayoutParams.MATCH_PARENT, (int) (mScreenHeight * heightScale), true); //(int) (mScreenHeight * heightScale)
         popupWindow.setTouchable(true);
+        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        popupWindow.setOutsideTouchable(true);
         //popupWindow.setAnimationStyle(R.style.anim_popup_dir);
         popupWindow.showAsDropDown(anchor, xoff, yoff);
         return popupWindow;
