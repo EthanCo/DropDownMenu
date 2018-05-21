@@ -19,7 +19,7 @@ Add it in your root build.gradle at the end of repositories:
 ### Step 2. Add the dependency  
 
 	dependencies {
-        implementation 'com.github.EthanCo:DropDownMenu:1.0.5'
+        implementation 'com.github.EthanCo:DropDownMenu:1.0.6'
 	}  
 
 ## 使用步骤
@@ -58,7 +58,7 @@ Add it in your root build.gradle at the end of repositories:
 
 ### 2.进行初始化  
 	
-	dropDownButton.attach(activity, datas,2, 0.5F, layoutMask);  
+	dropDownButton.attach(activity, datas,2, 0.5F, layoutMask,callback);  
 
 **运行，即可使用。**  
 
@@ -88,18 +88,19 @@ Add it in your root build.gradle at the end of repositories:
     public void setDropStateSilence(boolean open);
 
 
-	 /**
+	/**
      * 进行关联，实现DropDownButton和DropDownMenu的联动
      *
      * @param activity
-     * @param dropBeans   数据列表，Bean对象需实现DropBeanFlag接口
-     * @param defCheckPos 默认选中位置
-     * @param heightScale 高度占手机屏幕的比例 0-1
-     * @param layoutMask  半透明阴影
+     * @param dropBeans               数据列表，Bean对象需实现DropBeanFlag接口
+     * @param defCheckPos             默认选中位置
+     * @param heightScale             高度占手机屏幕的比例 0-1
+     * @param layoutMask              半透明阴影
+     * @param dropStateChangeListener 状态改变监听
      */
     public void attach(final Activity activity, final List<DropBeanFlag> dropBeans, final int defCheckPos,
                        @FloatRange(from = 0, to = 1) final float heightScale,
-                       @Nullable final View layoutMask);  
+                       @Nullable final View layoutMask, final DropStateChangeListener dropStateChangeListener);
 
 	/**
      * 设置当前选中位置

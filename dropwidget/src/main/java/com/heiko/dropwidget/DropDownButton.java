@@ -152,10 +152,11 @@ public class DropDownButton extends FrameLayout {
      * 进行关联，实现DropDownButton和DropDownMenu的联动
      *
      * @param activity
-     * @param dropBeans   数据列表，Bean对象需实现DropBeanFlag接口
-     * @param defCheckPos 默认选中位置
-     * @param heightScale 高度占手机屏幕的比例 0-1
-     * @param layoutMask  半透明阴影
+     * @param dropBeans               数据列表，Bean对象需实现DropBeanFlag接口
+     * @param defCheckPos             默认选中位置
+     * @param heightScale             高度占手机屏幕的比例 0-1
+     * @param layoutMask              半透明阴影
+     * @param dropStateChangeListener 状态改变监听
      */
     public void attach(final Activity activity, final List<DropBeanFlag> dropBeans, final int defCheckPos,
                        @FloatRange(from = 0, to = 1) final float heightScale,
@@ -169,7 +170,7 @@ public class DropDownButton extends FrameLayout {
                 if (layoutMask != null) {
                     layoutMask.setVisibility(isOpen ? View.VISIBLE : View.GONE);
                 }
-                if (dropStateChangeListener!=null) {
+                if (dropStateChangeListener != null) {
                     dropStateChangeListener.onDropStateChange(view, isOpen);
                 }
             }
