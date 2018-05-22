@@ -45,7 +45,7 @@ public class DropAdapter<T extends DropBeanFlag> extends RecyclerView.Adapter<Dr
                     data.setDropChecked(false);
                 }
             }
-        }else{
+        } else {
             for (T data : datas) {
                 data.setDropChecked(false);
             }
@@ -67,7 +67,11 @@ public class DropAdapter<T extends DropBeanFlag> extends RecyclerView.Adapter<Dr
         T data = datas.get(position);
         holder.tvTitle.setText(data.getDropName());
         if (data.isDropChecked()) {
-            holder.imgCheck.setImageResource(data.getDropCheckedImageRes());
+            int imgRes = data.getDropCheckedImageRes();
+            if (imgRes == 0) {
+                imgRes = R.drawable.drop_ic_tick;
+            }
+            holder.imgCheck.setImageResource(imgRes);
         }
         holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
             @Override
