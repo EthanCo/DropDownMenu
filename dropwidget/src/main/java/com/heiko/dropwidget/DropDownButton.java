@@ -86,6 +86,13 @@ public class DropDownButton extends FrameLayout {
             viewDropDivider.setVisibility(View.GONE);
         }
         layoutDropRoot.setBackgroundColor(buttonBg);
+        layoutDropRoot.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isOpen = imgDropDirection.isSelected();
+                setDropState(!isOpen);
+            }
+        });
     }
 
     public void setTitle(CharSequence text) {
@@ -163,7 +170,7 @@ public class DropDownButton extends FrameLayout {
                        @Nullable final View layoutMask, final DropStateChangeListener dropStateChangeListener) {
         addDropStateChangeListener(new DropStateChangeListener() {
             @Override
-            public void onDropStateChange(View view, boolean isOpen) {
+            public void onDropStateChange(View view, final boolean isOpen) {
                 if (isOpen) {
                     DropDownMenu.show(activity, dropBeans, heightScale, DropDownButton.this);
                 }

@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.PopupWindow;
 
 import java.lang.ref.WeakReference;
@@ -48,6 +49,14 @@ public class DropDownMenu {
                 dropDownButton.setCurrCheckPos(pos);
                 dropDownButton.setTitle(dropBeans.get(pos).getDropName());
                 dropAdapter.setSingleCheck(pos);
+                popupWindow.dismiss();
+            }
+        });
+
+        ViewGroup layoutRoot = root.findViewById(R.id.layout_root);
+        layoutRoot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 popupWindow.dismiss();
             }
         });
