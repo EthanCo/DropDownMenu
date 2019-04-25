@@ -1,9 +1,9 @@
 # DropDownMenu
 下拉菜单，可独立分离使用
 
-![DropDownMenu.gif](http://oqk78xit2.bkt.clouddn.com/DropDownMenu.gif)  
+![DropDownMenu.gif](DropDownMenu.gif)  
 
-![DropDownMenu.jpg](http://oqk78xit2.bkt.clouddn.com/DropDownMenu_mini.jpg)  
+![DropDownMenu.jpg](DropDownMenu.webp)  
 
 ## 添加依赖
 ### Step 1. Add the JitPack repository to your build file
