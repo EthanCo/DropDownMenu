@@ -72,6 +72,8 @@ public class DropAdapter<T extends DropBeanFlag> extends RecyclerView.Adapter<Dr
                 imgRes = R.drawable.drop_ic_tick;
             }
             holder.imgCheck.setImageResource(imgRes);
+        } else {
+            holder.imgCheck.setVisibility(View.GONE);
         }
         holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
             @Override

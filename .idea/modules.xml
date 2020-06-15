@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DropDownMenu.iml" filepath="$PROJECT_DIR$/DropDownMenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DropDownMenu2.iml" filepath="$PROJECT_DIR$/DropDownMenu2.iml" group="DropDownMenu2" />
+      <module fileurl="file://$PROJECT_DIR$/app/DropDownMenu2-app.iml" filepath="$PROJECT_DIR$/app/DropDownMenu2-app.iml" group="DropDownMenu2/app" />
+      <module fileurl="file://$PROJECT_DIR$/dropwidget/DropDownMenu2-dropwidget.iml" filepath="$PROJECT_DIR$/dropwidget/DropDownMenu2-dropwidget.iml" group="DropDownMenu2/dropwidget" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dropwidget/dropwidget.iml" filepath="$PROJECT_DIR$/dropwidget/dropwidget.iml" />
     </modules>
