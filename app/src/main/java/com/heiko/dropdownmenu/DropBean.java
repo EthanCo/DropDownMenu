@@ -54,4 +54,9 @@ public class DropBean implements DropBeanFlag {
     public int getDropCheckedImageRes() {
         return R.drawable.drop_ic_tick;
     }
+
+    @Override
+    public int getNoneDropCheckedImageRes() {
+        return 0;
+    }
 }

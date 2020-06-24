@@ -13,5 +13,6 @@ public interface DropBeanFlag {
     void setDropChecked(Boolean checked);
 
     int getDropCheckedImageRes();
+    int getNoneDropCheckedImageRes();
 
 }

@@ -1,5 +1,6 @@
 package com.heiko.dropwidget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -63,7 +64,7 @@ public class DropAdapter<T extends DropBeanFlag> extends RecyclerView.Adapter<Dr
     }
 
     @Override
-    public void onBindViewHolder(final DropViewHolder holder, final int position) {
+    public void onBindViewHolder(final DropViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         T data = datas.get(position);
         holder.tvTitle.setText(data.getDropName());
         if (data.isDropChecked()) {
@@ -73,7 +74,13 @@ public class DropAdapter<T extends DropBeanFlag> extends RecyclerView.Adapter<Dr
             }
             holder.imgCheck.setImageResource(imgRes);
         } else {
-            holder.imgCheck.setVisibility(View.GONE);
+            int imgRes = data.getNoneDropCheckedImageRes();
+            if (imgRes == 0) {
+                holder.imgCheck.setVisibility(View.GONE);
+            } else {
+                holder.imgCheck.setImageResource(imgRes);
+
+            }
         }
         holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
             @Override
