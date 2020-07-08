@@ -46,7 +46,7 @@ public class CustomActivity extends AppCompatActivity {
 //                layoutMask.setVisibility(View.VISIBLE);
 //                layoutMask.getBackground().setAlpha(100);
 //                layoutMask.getBackground().setAlpha(100);;
-                DropDownMenu.showCustom(CustomActivity.this, dropBeans, 0.4F, layoutCustomShow, currCheckedPos, new DropAdapter.OnItemClickListener() {
+                DropDownMenu.showCustom(CustomActivity.this, dropBeans, 0.7F, layoutCustomShow, currCheckedPos, new DropAdapter.OnItemClickListener() {
                     @Override
                     public void onClick(View view, int pos) {
                         currCheckedPos = pos;

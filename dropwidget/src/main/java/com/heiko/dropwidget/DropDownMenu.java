@@ -54,6 +54,13 @@ public class DropDownMenu {
         });
 
         ViewGroup layoutRoot = root.findViewById(R.id.layout_root);
+        ViewGroup llOther = root.findViewById(R.id.ll_other);
+        llOther.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
         layoutRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

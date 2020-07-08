@@ -38,9 +38,11 @@ public class DropPopupUtil {
         int allHeight = mScreenHeight - location[1] - height;//总体高度
 
         final View viewById = contentView.findViewById(R.id.drop_menu_list);
-        LinearLayout.LayoutParams linearParams = (LinearLayout.LayoutParams) viewById.getLayoutParams(); //取控件textView当前的布局参数 linearParams.height = 20;// 控件的高强制设成20
-        linearParams.height = (int) (allHeight * heightScale);
-        viewById.setLayoutParams(linearParams);
+
+//        LinearLayout.LayoutParams linearParams = (LinearLayout.LayoutParams) viewById.getLayoutParams(); //取控件textView当前的布局参数 linearParams.height = 20;// 控件的高强制设成20
+//        int afterHeight = (int) (allHeight * heightScale);
+//
+//        viewById.setLayoutParams(linearParams);
 
         final PopupWindow popupWindow = new PopupWindow(contentView,
                 ViewGroup.LayoutParams.MATCH_PARENT, allHeight, true); //(int) (mScreenHeight * heightScale)
