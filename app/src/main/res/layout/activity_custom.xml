@@ -9,29 +9,41 @@
 
     <LinearLayout
         android:id="@+id/layout_custom_show"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
-            android:gravity="center"
             android:id="@+id/tv_custom_show"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:gravity="center"
             android:text="自定义Show" />
 
         <View
-            android:background="@color/color_drop_divider"
             android:layout_width="match_parent"
-            android:layout_height="1px" />
+            android:layout_height="1px"
+            android:background="@color/color_drop_divider" />
 
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/layout_mask"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#88222222"
-        android:visibility="gone" />
+<!--    <FrameLayout-->
+<!--        android:id="@+id/layout_mask"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="#88323232"-->
+<!--        android:visibility="visible" />-->
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="bottom">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="看看是否半透明" />
+    </LinearLayout>
 </LinearLayout>

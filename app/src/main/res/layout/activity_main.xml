@@ -23,4 +23,16 @@
         android:layout_height="match_parent"
         android:background="#88222222"
         android:visibility="gone" />
+    <LinearLayout
+        android:gravity="bottom"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="看看是否半透明" />
+    </LinearLayout>
 </LinearLayout>

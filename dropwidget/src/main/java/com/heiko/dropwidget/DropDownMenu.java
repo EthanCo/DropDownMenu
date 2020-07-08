@@ -60,7 +60,6 @@ public class DropDownMenu {
                 popupWindow.dismiss();
             }
         });
-
         popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
@@ -124,6 +123,8 @@ public class DropDownMenu {
         popupWindowWeakRef = new WeakReference<>(popupWindow);
         return popupWindow;
     }
+
+
 
     @NonNull
     private static DropAdapter initRecyclerView(Context context, List<DropBeanFlag> dropBeans, int defCheckedPos, View root) {

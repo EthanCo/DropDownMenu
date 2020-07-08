@@ -24,7 +24,7 @@ import java.util.List;
 
 public class CustomActivity extends AppCompatActivity {
     private TextView tvCustomShow;
-    private FrameLayout layoutMask;
+    private View layoutMask;
     private int currCheckedPos = 2;
     private View layoutCustomShow;
 
@@ -43,8 +43,10 @@ public class CustomActivity extends AppCompatActivity {
         layoutCustomShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                layoutMask.setVisibility(View.VISIBLE);
-                DropDownMenu.showCustom(CustomActivity.this, dropBeans, 0.5F, layoutCustomShow, currCheckedPos, new DropAdapter.OnItemClickListener() {
+//                layoutMask.setVisibility(View.VISIBLE);
+//                layoutMask.getBackground().setAlpha(100);
+//                layoutMask.getBackground().setAlpha(100);;
+                DropDownMenu.showCustom(CustomActivity.this, dropBeans, 0.4F, layoutCustomShow, currCheckedPos, new DropAdapter.OnItemClickListener() {
                     @Override
                     public void onClick(View view, int pos) {
                         currCheckedPos = pos;
@@ -53,7 +55,7 @@ public class CustomActivity extends AppCompatActivity {
                     @Override
                     public void onDismiss() {
                         tvCustomShow.setText(dropBeans.get(currCheckedPos).getDropName());
-                        layoutMask.setVisibility(View.GONE);
+//                        layoutMask.setVisibility(View.GONE);
                     }
                 });
             }
@@ -64,7 +66,7 @@ public class CustomActivity extends AppCompatActivity {
     @NonNull
     private List<DropBeanFlag> initDatas() {
         List<DropBeanFlag> dropBeans = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 4; i++) {
             dropBeans.add(new DropBean(i, "item" + i));
         }
         return dropBeans;
