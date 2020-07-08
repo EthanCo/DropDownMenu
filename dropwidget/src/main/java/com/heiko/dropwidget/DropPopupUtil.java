@@ -37,11 +37,11 @@ public class DropPopupUtil {
         final int height = anchor.getHeight();
         int allHeight = mScreenHeight - location[1] - height;//总体高度
 
-        final View viewById = contentView.findViewById(R.id.drop_menu_list);
+        final View viewById = contentView.findViewById(R.id.ll_other);
 
 //        LinearLayout.LayoutParams linearParams = (LinearLayout.LayoutParams) viewById.getLayoutParams(); //取控件textView当前的布局参数 linearParams.height = 20;// 控件的高强制设成20
 //        int afterHeight = (int) (allHeight * heightScale);
-//
+//        linearParams.height = afterHeight;
 //        viewById.setLayoutParams(linearParams);
 
         final PopupWindow popupWindow = new PopupWindow(contentView,
@@ -53,6 +53,12 @@ public class DropPopupUtil {
         popupWindow.setOutsideTouchable(true);
         //popupWindow.setAnimationStyle(R.style.anim_popup_dir);
         popupWindow.showAsDropDown(anchor, xoff, yoff);
+        viewById.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
         return popupWindow;
     }
 

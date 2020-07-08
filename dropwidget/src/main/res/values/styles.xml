@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="MaxHeightRecyclerView">
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+
+</resources>

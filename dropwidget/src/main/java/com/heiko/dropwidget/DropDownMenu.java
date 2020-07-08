@@ -135,7 +135,7 @@ public class DropDownMenu {
 
     @NonNull
     private static DropAdapter initRecyclerView(Context context, List<DropBeanFlag> dropBeans, int defCheckedPos, View root) {
-        RecyclerView listDropMenu = root.findViewById(R.id.drop_menu_list);
+        MaxHeightRecyclerView listDropMenu = root.findViewById(R.id.drop_menu_list);
         listDropMenu.setLayoutManager(new LinearLayoutManager(context));
         DividerItemDecoration itemDecoration = new DividerItemDecoration(
                 context, DividerItemDecoration.VERTICAL);
