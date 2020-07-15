@@ -2,6 +2,7 @@ package com.heiko.dropwidget;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -73,6 +74,12 @@ public class DropAdapter<T extends DropBeanFlag> extends RecyclerView.Adapter<Dr
                 imgRes = R.drawable.drop_ic_tick;
             }
             holder.imgCheck.setImageResource(imgRes);
+
+            int selectColor = data.getSelectTextColor();
+            if (selectColor == 0) {
+                selectColor = Color.parseColor("#666666");
+            }
+            holder.tvTitle.setTextColor(selectColor);
         } else {
             int imgRes = data.getNoneDropCheckedImageRes();
             if (imgRes == 0) {
@@ -81,6 +88,11 @@ public class DropAdapter<T extends DropBeanFlag> extends RecyclerView.Adapter<Dr
                 holder.imgCheck.setImageResource(imgRes);
 
             }
+            int selectColor = data.getNoneTextColor();
+            if (selectColor == 0) {
+                selectColor = Color.parseColor("#666666");
+            }
+            holder.tvTitle.setTextColor(selectColor);
         }
         holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
             @Override

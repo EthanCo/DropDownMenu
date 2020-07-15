@@ -15,4 +15,8 @@ public interface DropBeanFlag {
     int getDropCheckedImageRes();
     int getNoneDropCheckedImageRes();
 
+    int getSelectTextColor();
+    int getNoneTextColor();
+
+
 }

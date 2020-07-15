@@ -1,5 +1,7 @@
 package com.heiko.dropdownmenu;
 
+import android.graphics.Color;
+
 import com.heiko.dropwidget.DropBeanFlag;
 
 /**
@@ -58,5 +60,17 @@ public class DropBean implements DropBeanFlag {
     @Override
     public int getNoneDropCheckedImageRes() {
         return 0;
+    }
+
+    @Override
+    public int getSelectTextColor() {
+        return  0;
+//        return  Color.parseColor("#ff1a1a1a");
+    }
+
+    @Override
+    public int getNoneTextColor() {
+        return  0;
+//        return  Color.parseColor("#4d1a1a1a");
     }
 }
