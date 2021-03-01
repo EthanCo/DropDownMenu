@@ -35,6 +35,8 @@ public class DropPopupUtil {
         anchor.getLocationInWindow(location);
         Log.d(TAG, location[0] + "  " + location[1]);
         final int height = anchor.getHeight();
+
+        Log.d(TAG, "anchor.getHeight() height = " + height);
         int allHeight = mScreenHeight - location[1] - height;//总体高度
 
         final View viewById = contentView.findViewById(R.id.ll_other);
@@ -45,13 +47,15 @@ public class DropPopupUtil {
 //        viewById.setLayoutParams(linearParams);
 
         final PopupWindow popupWindow = new PopupWindow(contentView,
-                ViewGroup.LayoutParams.MATCH_PARENT, allHeight, true); //(int) (mScreenHeight * heightScale)
+                ViewGroup.LayoutParams.MATCH_PARENT, allHeight+height, true); //(int) (mScreenHeight * heightScale)
 //        final PopupWindow popupWindow = new PopupWindow(contentView,
 //                ViewGroup.LayoutParams.MATCH_PARENT, (int) (mScreenHeight * heightScale), true); //(int) (mScreenHeight * heightScale)
+//        popupWindow.setHeight(mScreenHeight);
         popupWindow.setTouchable(true);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
         popupWindow.setOutsideTouchable(true);
         //popupWindow.setAnimationStyle(R.style.anim_popup_dir);
+//        popupWindow.showAsDropDown(anchor, xoff, height);
         popupWindow.showAsDropDown(anchor, xoff, yoff);
         viewById.setOnClickListener(new View.OnClickListener() {
             @Override
