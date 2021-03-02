@@ -2,6 +2,7 @@ package com.heiko.dropwidget;
 
 import android.app.Activity;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -20,7 +21,7 @@ public class DropPopupUtil {
      * @param activity
      * @param contentView 自定义的view
      * @param heightScale 高度比例 0-1
-     * @param anchor
+     * @param anchor      锚
      * @param xoff
      * @param yoff
      */
@@ -36,7 +37,10 @@ public class DropPopupUtil {
         Log.d(TAG, location[0] + "  " + location[1]);
         final int height = anchor.getHeight();
 
+        Log.d(TAG, " location[1] = " + location[1]);
         Log.d(TAG, "anchor.getHeight() height = " + height);
+//        int allHeight = mScreenHeight - height;//总体高度
+//        int allHeight = mScreenHeight - location[1];//总体高度
         int allHeight = mScreenHeight - location[1] - height;//总体高度
 
         final View viewById = contentView.findViewById(R.id.ll_other);
@@ -47,11 +51,12 @@ public class DropPopupUtil {
 //        viewById.setLayoutParams(linearParams);
 
         final PopupWindow popupWindow = new PopupWindow(contentView,
-                ViewGroup.LayoutParams.MATCH_PARENT, allHeight+height, true); //(int) (mScreenHeight * heightScale)
+                ViewGroup.LayoutParams.MATCH_PARENT, allHeight + 80, true); //(int) (mScreenHeight * heightScale)
 //        final PopupWindow popupWindow = new PopupWindow(contentView,
 //                ViewGroup.LayoutParams.MATCH_PARENT, (int) (mScreenHeight * heightScale), true); //(int) (mScreenHeight * heightScale)
 //        popupWindow.setHeight(mScreenHeight);
         popupWindow.setTouchable(true);
+//        popupWindow.setBackgroundDrawable(new ColorDrawable(0x00000000));    //要为popWindow设置一个背景才有效
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
         popupWindow.setOutsideTouchable(true);
         //popupWindow.setAnimationStyle(R.style.anim_popup_dir);

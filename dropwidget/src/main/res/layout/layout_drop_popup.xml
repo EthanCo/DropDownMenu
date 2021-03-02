@@ -8,25 +8,24 @@
 
     <com.heiko.dropwidget.MaxHeightRecyclerView
         android:id="@+id/drop_menu_list"
-        app:maxHeight="300dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:overScrollMode="never" />
+        android:overScrollMode="never"
+        app:maxHeight="300dp" />
     <!--上边的东西是要选择的item,剩下的部分填充剩下的高度，背景设为黑色（全局不要设置任何背景，否则会被覆盖），透明设置0.7-->
     <LinearLayout
         android:id="@+id/ll_other"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.5"
+        android:alpha="0.4"
         android:background="#000000">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text=""
-
-            />
+            android:visibility="visible" />
     </LinearLayout>
 
 </LinearLayout>

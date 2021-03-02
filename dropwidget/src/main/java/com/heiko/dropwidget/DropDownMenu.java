@@ -90,7 +90,7 @@ public class DropDownMenu {
      * @param activity
      * @param dropBeans             数据列表，Bean对象需实现DropBeanFlag接口
      * @param heightScale           高度占手机屏幕的比例 0-1
-     * @param anchor                和PopupWindow同理
+     * @param anchor                和PopupWindow同理 锚
      * @param defCheckedPos         默认选中Position
      * @param dropAdapterItemClick  Item点击监听
      * @param onDropDismissListener dismiss监听
